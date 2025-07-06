@@ -1,5 +1,5 @@
-import { Slot } from 'expo-router';
-import { View } from 'react-native';
+import { Slot } from 'expo-router'
+import { View } from 'react-native'
 
 const Layout = (): JSX.Element => {
   return (
@@ -9,4 +9,4 @@ const Layout = (): JSX.Element => {
   );
 };
 
-export default Layout;
+export default Layout
