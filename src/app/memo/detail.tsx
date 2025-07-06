@@ -1,15 +1,18 @@
 import {View, Text, ScrollView, StyleSheet} from 'react-native'
 import { FontAwesome6 } from '@expo/vector-icons'
+import { router } from 'expo-router'
 
-import Header from '../../components/Header'
 import CircleButton from '../../components/CircleButton'
-// import Icon from '../../components/Icon'
 
+const handlePress = (): void => {
+    // Handle edit logic here
+    console.log('Edit button pressed');
+    router.push('/memo/edit'); // Navigate to edit page
+}
 
 const Detail = (): JSX.Element => {
     return (
         <View style={styles.container}>
-            <Header />
             <View style={styles.memoHeader}>
                 <Text style={styles.memoTitle}>買い物リスト</Text>
                 <Text style={styles.memoDate}>2025年7月5日 10:00</Text>
@@ -21,7 +24,7 @@ const Detail = (): JSX.Element => {
                     ここからサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
                 </Text>
             </ScrollView>
-            <CircleButton style={{ top: 160, bottom: 'auto' }}>
+            <CircleButton onPress={handlePress} style={{ top: 60, bottom: 'auto' }}>
                 <FontAwesome6 name='pencil' size={40} color='#ffffff' />
             </CircleButton>
         </View>

@@ -1,20 +1,23 @@
 import {
     View, TextInput, StyleSheet, KeyboardAvoidingView
     } from 'react-native'
-import Header from '../../components/Header'
 import CircleButton from '../../components/CircleButton'
-// import Feather from '../../components/Icon'
 import { Feather } from '@expo/vector-icons'
+import { router } from 'expo-router'
 
+const handlePress = (): void => {
+    // Handle save logic here
+    console.log('Save button pressed');
+    router.back() // Navigate back after saving
+}
 
 const Edit = (): JSX.Element => {
     return (
         <KeyboardAvoidingView behavior='height' style={styles.container}>
-            <Header />
             <View style={styles.inputContainer}>
                 <TextInput multiline style={styles.input} value="ホゲホゲ"/>
             </View>
-            <CircleButton>
+            <CircleButton onPress={handlePress}>
                 <Feather name='check' size={40} color='#ffffff'/>
             </CircleButton>
         </KeyboardAvoidingView>
